@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar  color="primary">
+      <ion-title>Bitcoin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+      <ion-card-content>
+        <ion-card-title>
+          Bitcoin
+          </ion-card-title>
+        <p>
+          This data was produced from the CoinDesk Bitcoin Price Index. 
+          Non-USD currency data converted using hourly conversion rate from openexchangerates.org.
+        </p>
+      </ion-card-content>
+      <ion-card-content>
+        Dolar: $ {{price_usd}}
+      </ion-card-content>
+      <ion-card-content>
+          EUR: {{price_eur}}
+        </ion-card-content>
+        <ion-card-content>
+            Real: R$ {{price_real}}
+          </ion-card-content>
+  </ion-card>
+</ion-content>
