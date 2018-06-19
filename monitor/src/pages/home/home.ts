@@ -10,10 +10,10 @@ import "rxjs/add/operator/map";
 export class HomePage {
 
   private url:string = "https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=8189426204c948f6966ee565fcbcba89";
-  public criptoMoney:JSON;
-  public price_usd:JSON;
-  public price_eur:JSON;
-  public price_real:any;
+  public results:Array<any>;
+  public rx:Array<string>;
+  public dataJson:JSON;
+  public dataarray:Array<string>=[];
 
   constructor(
     public navCtrl: NavController,
@@ -25,14 +25,45 @@ export class HomePage {
   }
   public getNews(http:Http){
    
-    this.http.get(this.url)
-    .map(res=>res.json())
-    .subscribe(data=>{
-        
-        console.log(data);
-         
-    })
+    // this.http.get(this.url)
+    // .map(res=>res.json())
+    // .subscribe(data=>{
+      
  
+
+    //     data.articles.map(data=>{
+    //       // this.results = Array.of(data); 
+    //       // console.log(this.results)
+    //       this.rx = this.rx=Array.of(data);
+    //       this.results.concat(this.rx);
+    //       console.log(this.results);
+      
+    //     });
+
+       
+    // })
+      this.results = this.getDataFromArray(http);
+
+
+  }
+  public getDataFromArray(http:Http){
+
+      this.http.get(this.url)
+      .map(res=>res.json())
+      .subscribe(data=>{
+
+         data.articles.map(data=>{
+            this.dataarray.push(data);
+          });
+  
+      })
+      return this.dataarray
+    // this.rx =[
+    //   "T",
+    //   "S",
+    //   "B"
+    // ]
+   // console.log(this.rx)
   }
 
 }
