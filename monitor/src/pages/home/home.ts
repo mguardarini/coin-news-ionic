@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,Platform } from 'ionic-angular';
 import { Http } from '@angular/http';
 import "rxjs/add/operator/map";
+import { InAppBrowser } from 'ionic-native';
 
 @Component({
   selector: 'page-home',
@@ -14,10 +15,12 @@ export class HomePage {
   public rx:Array<string>;
   public dataJson:JSON;
   public dataarray:Array<string>=[];
+   public browser:any;
 
   constructor(
     public navCtrl: NavController,
-    private http: Http  
+    private http: Http, 
+    public platform: Platform
   ) {
 
     this.getNews(http);
@@ -46,6 +49,15 @@ export class HomePage {
 
 
   }
+
+  public openUrl(link:any) {
+
+    this.platform.ready().then(() => {
+        this.browser = new InAppBrowser(link,'_blank');
+
+    });
+  }    
+
   public getDataFromArray(http:Http){
 
       this.http.get(this.url)
