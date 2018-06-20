@@ -24,7 +24,7 @@ export class HomePage {
     public platform: Platform
   ) {
 
-    //this.results = this.getDataFromArray(http);
+    this.results = this.getDataFromArray(http);
     
   }
     public openUrl(link:any) {
