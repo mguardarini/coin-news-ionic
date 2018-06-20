@@ -8,6 +8,7 @@
       "dom",
       "es2015"
     ],
+    "skipLibCheck": true,
     "module": "es2015",
     "moduleResolution": "node",
     "sourceMap": true,
@@ -25,4 +26,5 @@
   "atom": {
     "rewriteTsconfig": false
   }
+  
 }
