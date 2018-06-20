@@ -51,10 +51,10 @@ export class BitcoinPage {
 
         type: 'bar',
         data: {
-            labels: ["2014", "2015", "2016", "2017", "2018"],
+            labels: ["2014", "2015", "2016", "2017", this.price_usd],
             datasets: [{
                 label: 'Value "$":',
-                data: [800, 1200, 3000, 64000, 8000],
+                data: [800, 1200, 3000, 20000, 8000],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
