@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController,Platform } from 'ionic-angular';
 import { Http } from '@angular/http';
-import "rxjs/add/operator/map";
 import { InAppBrowser } from 'ionic-native';
+import "rxjs/add/operator/map";
+
 
 @Component({
   selector: 'page-home',
@@ -14,7 +15,7 @@ export class HomePage {
   public results:Array<any>;
   public rx:Array<string>;
   public dataJson:JSON;
-  public dataarray:Array<string>=[];
+  public newsArray:Array<string>=[];
    public browser:any;
 
   constructor(
@@ -23,34 +24,10 @@ export class HomePage {
     public platform: Platform
   ) {
 
-    this.getNews(http);
+    //this.results = this.getDataFromArray(http);
     
   }
-  public getNews(http:Http){
-   
-    // this.http.get(this.url)
-    // .map(res=>res.json())
-    // .subscribe(data=>{
-      
- 
-
-    //     data.articles.map(data=>{
-    //       // this.results = Array.of(data); 
-    //       // console.log(this.results)
-    //       this.rx = this.rx=Array.of(data);
-    //       this.results.concat(this.rx);
-    //       console.log(this.results);
-      
-    //     });
-
-       
-    // })
-      this.results = this.getDataFromArray(http);
-
-
-  }
-
-  public openUrl(link:any) {
+    public openUrl(link:any) {
 
     this.platform.ready().then(() => {
         this.browser = new InAppBrowser(link,'_blank');
@@ -65,17 +42,11 @@ export class HomePage {
       .subscribe(data=>{
 
          data.articles.map(data=>{
-            this.dataarray.push(data);
+            this.newsArray.push(data);
           });
   
       })
-      return this.dataarray
-    // this.rx =[
-    //   "T",
-    //   "S",
-    //   "B"
-    // ]
-   // console.log(this.rx)
+      return this.newsArray
   }
 
 }
