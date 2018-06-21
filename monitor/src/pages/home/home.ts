@@ -35,6 +35,22 @@ export class HomePage {
     });
   }    
 
+  public searchQuery: string = '';
+  public items: string[];
+  
+ 
+  public getItems(ev: any) {
+
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
   public getDataFromArray(http:Http){
 
       this.http.get(this.url)
