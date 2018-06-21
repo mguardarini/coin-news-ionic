@@ -31,7 +31,7 @@ export class BitcoinPage {
                                                   {
                                                      'technology' : '2015',
                                                      'time'       : 1000, //responsavel pela localizaão do ponto
-                                                     'color'      : 'rgba(231, 242, 95, 0.5)',
+                                                     'color'      : 'rgba(255,255,0,0.3)',
                                                      'hover'      : 'rgba(199, 108, 129, 0.5)'
                                                   },
                                                   {
