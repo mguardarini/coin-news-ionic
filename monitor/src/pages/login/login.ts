@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,LoadingController  } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 /**
  * Generated class for the LoginPage page.
@@ -17,7 +18,7 @@ import { TabsPage } from '../tabs/tabs';
 
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController,private googlePlus: GooglePlus) {
   }
   callTabs = TabsPage;
   presentLoading() {
@@ -28,8 +29,10 @@ export class LoginPage {
     });
     loader.present();
     this.navCtrl.setRoot(TabsPage);
-   
+    this.googlePlus.login({})
+    .then(res => console.log(res))
+    .catch(err => console.error(err));
   }
 
-
+  
 }

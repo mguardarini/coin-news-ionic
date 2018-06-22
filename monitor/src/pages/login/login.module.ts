@@ -1,5 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { IonicPageModule,LoadingController } from 'ionic-angular';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 import { LoginPage } from './login';
 
@@ -9,6 +10,9 @@ import { LoginPage } from './login';
   ],
   imports: [
     IonicPageModule.forChild(LoginPage),
+  ],
+  providers: [
+    GooglePlus,
   ],
 })
 

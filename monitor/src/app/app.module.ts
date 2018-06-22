@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
 import { NgModule, ErrorHandler } from '@angular/core';
 import {enableProdMode} from '@angular/core';
-
+import { GooglePlus } from '@ionic-native/google-plus';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -44,6 +44,7 @@ enableProdMode();
   providers: [
     StatusBar,
     SplashScreen,
+    GooglePlus,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
