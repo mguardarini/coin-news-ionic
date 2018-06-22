@@ -1,7 +1,8 @@
 import { Component,ViewChild} from '@angular/core';
 import { IonicPage,
     NavController,
-    NavParams } from 'ionic-angular';
+    NavParams,
+    MenuController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { ChartsModule } from 'ng2-charts';
 import { Chart } from 'chart.js';
@@ -23,8 +24,8 @@ export class BitcoinPage {
   public price_usd:JSON;
   public price_eur:JSON;
   public price_real:any;
+  public util:any;
   @ViewChild('lineChart') lineChart;
-
 
    public coin_years: any = {
    										        "technologies" : [
@@ -65,12 +66,16 @@ export class BitcoinPage {
 
   constructor(
     public navCtrl: NavController,
-    private http: Http  
+    private http: Http,
+    public menuCtrl: MenuController  
   
   ) {
     this.getBitcoinData(http);
   }
   
+  openMenu() {
+    this.menuCtrl.open();
+  }
   ionViewDidLoad()
   {
      this.defineChartData();
@@ -114,7 +119,7 @@ export class BitcoinPage {
                  easing                : 'easeInQuart',
                  backgroundColor       : this.chartColours,
                  hoverBackgroundColor  : this.chartHoverColours,
-                 fill 				   : false
+                 fill 				   : true
               }]
            },
            options : {
@@ -123,7 +128,7 @@ export class BitcoinPage {
                  display     : true,
                  boxWidth    : 300,
                  fontSize    : 15,
-                 padding     : 100
+                 padding     : 300
               },
               scales: {
                  yAxes: [{
@@ -135,7 +140,7 @@ export class BitcoinPage {
                  }],
                  xAxes: [{
                     ticks: {
-                       autoSkip: true
+                       autoSkip: false
                     }
                  }]
               }
@@ -153,7 +158,8 @@ export class BitcoinPage {
         
         this.price_usd = data.bpi.USD.rate;
         this.price_eur=data.bpi.EUR.rate;
-        this.price_real = parseInt(data.bpi.USD.rate) * 3.7;
+        this.util = parseFloat(data.bpi.USD.rate);
+        this.price_real = (this.util*3.7).toFixed(3);
          
     })
  
