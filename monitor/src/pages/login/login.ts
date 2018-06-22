@@ -29,10 +29,16 @@ export class LoginPage {
     });
     loader.present();
     this.navCtrl.setRoot(TabsPage);
-    this.googlePlus.login({})
-    .then(res => console.log(res))
-    .catch(err => console.error(err));
   }
 
+  doLoginWithGmail(){
+    this.googlePlus.login({})
+    .then(
+      res => {
+        this.presentLoading();
+      } 
+    )
+    .catch(err => console.error(err));
+  }
   
 }

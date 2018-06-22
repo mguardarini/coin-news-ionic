@@ -22,7 +22,8 @@ gen/
 *.exe
 *.o
 *.so
-
+*.keystore
+*.apk
 # Packages #
 ############
 *.7z
@@ -39,6 +40,7 @@ log/
 *.log
 *.sql
 *.sqlite
+output.json
 
 # OS generated files #
 ######################
