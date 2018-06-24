@@ -1,3 +1,5 @@
+# IN DEVELOPMENT ... ^^
+
 # Coin News
 
 The coin news is an open source app to test ionic framework. 
