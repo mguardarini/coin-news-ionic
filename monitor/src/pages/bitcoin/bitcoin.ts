@@ -2,11 +2,13 @@ import { Component,ViewChild} from '@angular/core';
 import { 
     NavController,
     MenuController,
-    App
+    App,
+    AlertController
   } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { Chart } from 'chart.js';
 import {LoginPage} from '../login/login';
+
 
 import "rxjs/add/operator/map";
 @Component({
@@ -61,12 +63,14 @@ export class BitcoinPage {
    public chartColours              : any    = [];
    public chartHoverColours         : any    = [];
    public chartLoadingEl            : any;
+  
 
   constructor(
     public navCtrl: NavController,
     private http: Http,
     public menuCtrl: MenuController,
-    public appCtrl:App
+    public appCtrl:App,
+    public alertCtrl:AlertController
   
   ) {
     this.getBitcoinData(http);
@@ -144,6 +148,31 @@ export class BitcoinPage {
            }
         });
   }
+
+  presentConfirmLogout() {
+    let alert = this.alertCtrl.create({
+      title: 'Logout',
+      message: 'Are you sure you want logout?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          handler: () => {
+            
+          }
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            this.doLogout();
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+  
+
   public doLogout(){
     
     // this.navCtrl.popToRoot();

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController,Platform, App } from 'ionic-angular';
+import { NavController,Platform, App,AlertController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { InAppBrowser } from 'ionic-native';
 import {LoginPage} from '../login/login';
@@ -23,7 +23,8 @@ export class HomePage {
     public navCtrl: NavController,
     private http: Http, 
     public platform: Platform,
-    public appCtrl: App
+    public appCtrl: App,
+    public alertCtrl: AlertController
   ) {
 
     this.results = this.getDataFromArray(http);
@@ -62,6 +63,32 @@ export class HomePage {
       })
       return this.newsArray
   }
+
+
+  presentConfirmLogout() {
+    let alert = this.alertCtrl.create({
+      title: 'Logout',
+      message: 'Are you sure you want logout?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          handler: () => {
+            
+          }
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            this.doLogout();
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+  
+
   public doLogout(){
     
     // this.navCtrl.popToRoot();
