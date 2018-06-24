@@ -8,16 +8,6 @@ This app is so easy to use and follow about bitcoin news around the world.
 
 The idea about the app is to merge two different API's [NewsAPI]() and [Coindesk API]().
 
-### Login Page
-![Screenshot](https://preview.ibb.co/kDhhuo/localhost_8100_Galaxy_S5.png)
-
-### News Page
-![Screenshot](https://preview.ibb.co/i8T0fT/localhost_8100_Galaxy_S5_1.png)
-
-### Bitcoin Page
-![Screenshot](https://preview.ibb.co/kwiBn8/localhost_8100_Galaxy_S5_2.png)
-
-
 # Getting Started
 
 First of all, we need to clone this repository and install modules. If you love git like me, please clone the repository with this command:  git clone https://github.com/mguardarini/ionic-app-.git
