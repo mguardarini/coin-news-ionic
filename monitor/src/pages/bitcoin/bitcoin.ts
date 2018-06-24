@@ -1,7 +1,9 @@
 import { Component,ViewChild} from '@angular/core';
 import { 
     NavController,
-    MenuController } from 'ionic-angular';
+    MenuController,
+    App
+  } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { Chart } from 'chart.js';
 import {LoginPage} from '../login/login';
@@ -63,7 +65,8 @@ export class BitcoinPage {
   constructor(
     public navCtrl: NavController,
     private http: Http,
-    public menuCtrl: MenuController  
+    public menuCtrl: MenuController,
+    public appCtrl:App
   
   ) {
     this.getBitcoinData(http);
@@ -141,12 +144,11 @@ export class BitcoinPage {
            }
         });
   }
-
-
   public doLogout(){
-    this.navCtrl.setRoot(LoginPage);
+    
+    // this.navCtrl.popToRoot();
+    this.appCtrl.getRootNav().setRoot(LoginPage);
   }
-  
   public getBitcoinData(http:Http){
    
     this.http.get(this.url)

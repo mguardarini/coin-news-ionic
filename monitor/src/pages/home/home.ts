@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController,Platform } from 'ionic-angular';
+import { NavController,Platform, App } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { InAppBrowser } from 'ionic-native';
 import {LoginPage} from '../login/login';
@@ -22,7 +22,8 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     private http: Http, 
-    public platform: Platform
+    public platform: Platform,
+    public appCtrl: App
   ) {
 
     this.results = this.getDataFromArray(http);
@@ -62,6 +63,8 @@ export class HomePage {
       return this.newsArray
   }
   public doLogout(){
-    this.navCtrl.setRoot(LoginPage);
+    
+    // this.navCtrl.popToRoot();
+    this.appCtrl.getRootNav().setRoot(LoginPage);
   }
 }
