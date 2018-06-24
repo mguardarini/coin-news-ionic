@@ -1,11 +1,10 @@
 import { Component,ViewChild} from '@angular/core';
-import { IonicPage,
+import { 
     NavController,
-    NavParams,
     MenuController } from 'ionic-angular';
 import { Http } from '@angular/http';
-import { ChartsModule } from 'ng2-charts';
 import { Chart } from 'chart.js';
+import {LoginPage} from '../login/login';
 
 import "rxjs/add/operator/map";
 @Component({
@@ -14,11 +13,8 @@ import "rxjs/add/operator/map";
 })
 
 
-
 export class BitcoinPage {
  
-
-
   private url:string = "https://api.coindesk.com/v1/bpi/currentprice.json";
   public criptoMoney:JSON;
   public price_usd:JSON;
@@ -81,8 +77,6 @@ export class BitcoinPage {
      this.defineChartData();
      this.createLineChart();
   }
-
-
 
   /**
    *
@@ -149,7 +143,10 @@ export class BitcoinPage {
   }
 
 
-
+  public doLogout(){
+    this.navCtrl.setRoot(LoginPage);
+  }
+  
   public getBitcoinData(http:Http){
    
     this.http.get(this.url)

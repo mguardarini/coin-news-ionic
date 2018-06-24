@@ -5,8 +5,9 @@
         <ion-icon name="menu"></ion-icon>
       </button>
       <ion-buttons end>
-        <button ion-button icon-only>
-          <ion-icon name="md-more"></ion-icon>
+        <button ion-button icon-only (click)="doLogout()">
+          <label>Logout</label>
+          <ion-icon name="ios-log-out"></ion-icon>
         </button>
       </ion-buttons>
   </ion-toolbar>

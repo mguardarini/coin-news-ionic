@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController,Platform } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { InAppBrowser } from 'ionic-native';
+import {LoginPage} from '../login/login';
 import "rxjs/add/operator/map";
 
 
@@ -60,5 +61,7 @@ export class HomePage {
       })
       return this.newsArray
   }
-
+  public doLogout(){
+    this.navCtrl.setRoot(LoginPage);
+  }
 }
