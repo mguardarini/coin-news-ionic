@@ -18,7 +18,6 @@
           <ion-item-sliding *ngFor="let item of results" text-wrap>
             <ion-item>
               <ion-card>
-                  <!-- <ion-img style="width: 400px; height: 120px;" src="{{item.urlToImage}}"></ion-img>-->
                   <ion-card-header text-wrap> 
                   {{item.title}} -   
                   {{item.author}} 
@@ -30,18 +29,8 @@
                       Published at:  {{item.publishedAt}} 
                   </ion-card-content>
                   <button ion-button full (click)="openUrl(item.url)">See more</button>
-
               </ion-card>
             </ion-item>
           </ion-item-sliding>
       </ion-list>
-     
-<!--      
-     <ion-list>
-        item.url
-
-        <ion-item-sliding *ngFor="let result of results; let i = index">
-          <ion-item >{{i}} - {{result.description}}</ion-item>
-        </ion-item-sliding>
-    </ion-list> -->
 </ion-content>

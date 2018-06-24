@@ -13,11 +13,11 @@ export class HomePage {
 
   private url:string = "https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=8189426204c948f6966ee565fcbcba89";
   public results:Array<any>;
-  public rx:Array<string>;
-  public dataJson:JSON;
   public newsArray:Array<string>=[];
-   public browser:any;
-
+  public browser:any;
+  public searchQuery: string = '';
+  public items: string[];
+  
   constructor(
     public navCtrl: NavController,
     private http: Http, 
@@ -34,11 +34,7 @@ export class HomePage {
 
     });
   }    
-
-  public searchQuery: string = '';
-  public items: string[];
   
- 
   public getItems(ev: any) {
 
     // set val to the value of the searchbar
