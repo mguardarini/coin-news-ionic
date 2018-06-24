@@ -24,6 +24,12 @@ Next step installs all the libraries we need to run the app.
     in the folder of the project run the command below: 
 * yarn install
 
+Now, go to folder of the project and run the command: 
+
+* ionic serve
+
+If you don't know ionic, please, go to [site](https://ionicframework.com/docs/intro/installation/) and watch the tutorial how you configure your development envirment.
+
 # Structure of the folders
 
 ```sh
