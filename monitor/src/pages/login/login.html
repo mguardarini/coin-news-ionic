@@ -5,36 +5,40 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-toolbar  color="primary">
+    <ion-toolbar color="primary">
         <ion-title>Login</ion-title>
     </ion-toolbar>
 </ion-header>
 
 
 <ion-content padding class="action-sheets-basic-page">
-    <br><br><br><br><br><br>
+   
+  <ion-card class="card">
+      <ion-img class="img" src="../assets/imgs/login6.svg"></ion-img>
+
     <ion-list>
 
         <ion-item>
-          <ion-label stacked>Usuário</ion-label>
+          <ion-label stacked>User</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
       
         <ion-item>
-          <ion-label stacked>Senha</ion-label>
+          <ion-label stacked>Password</ion-label>
           <ion-input type="password"></ion-input>
         </ion-item>
-      
+        <ion-item>
+            <ion-label>Remember login?</ion-label>
+            <ion-checkbox color="#9DD2D8" checked="false"></ion-checkbox>
+          </ion-item>
       </ion-list>
   <button ion-button block (click)="presentLoading()">
-    Entrar
+    Sign in
   </button>
   <button ion-button icon-start color="danger" (click)="doLoginWithGmail()" outline>
         <ion-icon name="logo-googleplus"></ion-icon>
-        Login Gmail
+        Login with Gmail
   </button>
-  <button ion-button icon-start outline>
-      <ion-icon name="logo-facebook"></ion-icon>
-      Login with Facebook
-  </button>
+
+</ion-card> 
 </ion-content>

@@ -4,21 +4,40 @@ page-login {
           color: #ED4248;
         }
         .ion-md-arrow-dropright-circle {
-          color: #508AE4;
-        }
+          color: #9DD2D8;
+        } 
         .ion-md-heart-outline {
           color: #31D55F;
         }
         .action-sheet-cancel ion-icon,
         .action-sheet-destructive ion-icon {
-          color: #757575;
+          color: #ffffff;
         }
+        background-color: #9DD2D8;
         background-position: center;
-      //  background: url(../assets/imgs/logo.png);
+        //background: url(../assets/imgs/logo.jpg);
         margin: auto;
         z-index: 2;
-        position: relative;
-        
+        position: center;
+
+        .img {
+          height: 38vh !important;
+          width: auto !important;
+          align-items: center;
+          background-color: #ffffff;
+          z-index: 2;
+          margin: 50px;
+          }
+        .card{
+          display: flex;
+          flex-direction: column;
+          width: 100% !important;
+          margin: 0 !important;
+        }
+        .toolbar {
+          background-color: #FC6E51
+        }
       }
+   
     
 }
