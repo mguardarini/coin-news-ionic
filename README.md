@@ -5,8 +5,7 @@
 The coin news is an open source app to test ionic framework. 
 
 This app is so easy to use and follow about bitcoin news around the world.
-
-![Screenshot](https://cdn4.iconfinder.com/data/icons/e-commerce-and-shopping-3/500/exchange-dollar-euro-bitcoin-british-pound-512.png)
+<img align="left" src="https://cdn4.iconfinder.com/data/icons/e-commerce-and-shopping-3/500/exchange-dollar-euro-bitcoin-british-pound-512.png" width="300" height="300" />
 
 The idea about the app is to merge two different API's [NewsAPI](https://newsapi.org/) and [Coindesk API](https://www.coindesk.com/api/).
 
