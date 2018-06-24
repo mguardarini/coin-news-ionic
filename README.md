@@ -47,6 +47,10 @@ Next step installs all the libraries we need to run the app.
        - menu/
        - tabs/
        - tutorial/
+   - app_images 
+       - login.png
+       - news.png
+       - bitcoin.png
 ```
 # References
 
