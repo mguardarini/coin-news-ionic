@@ -6,7 +6,7 @@ import { GooglePlus } from '@ionic-native/google-plus';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/notification/notification';
+import { AboutPage } from '../pages/about/about';
 import { BitcoinPage } from '../pages/bitcoin/bitcoin';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
